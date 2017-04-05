@@ -10,7 +10,7 @@ export function debug<T>(this: Observable<T>,
 		return this.do(
 			(v) => console.log.apply(console, nextMsg ? [nextMsg, v] : [v]),
 			(e) => console.error.apply(console, (errorMsg || nextMsg) ? [errorMsg || nextMsg, e] : [e]),
-			console.info.bind(console, completeMsg || nextMsg || 'complete')
+			() => console.info(completeMsg || nextMsg || 'complete')
 		)
 	}
 
