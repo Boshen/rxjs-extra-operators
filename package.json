@@ -1,6 +1,6 @@
 {
   "name": "rxjs-extra-operators",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "repository": "https://github.com/Boshen/rxjs-extras-operators",
   "author": "Boshen <boshenc@gmail.com>",
