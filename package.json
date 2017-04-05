@@ -1,13 +1,13 @@
 {
   "name": "rxjs-extra-operators",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "main": "index.js",
   "repository": "https://github.com/Boshen/rxjs-extras-operators",
   "author": "Boshen <boshenc@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
     "test": "mocha test/*.ts --require ts-node/register",
-    "build": "tsc"
+    "build": "rm dist && tsc"
   },
   "peerDependencies": {
     "rxjs": "^5.3.0"
