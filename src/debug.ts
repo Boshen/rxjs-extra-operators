@@ -3,20 +3,20 @@ import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/do'
 
 export function debug<T>(this: Observable<T>,
-												 nextMsg: string = '',
+												 nextMsg?: string,
 												 errorMsg?: string,
 												 completeMsg?: string): Observable<T> {
 
 		return this.do(
-			console.log.bind(console, nextMsg),
-			console.error.bind(console, errorMsg || nextMsg),
-			console.info.bind(console, completeMsg || nextMsg)
+			(v) => console.log.apply(console, nextMsg ? [nextMsg, v] : [v]),
+			(e) => console.error.apply(console, (errorMsg || nextMsg) ? [errorMsg || nextMsg, e] : [e]),
+			console.info.bind(console, completeMsg || nextMsg || 'complete')
 		)
 	}
 
 declare module 'rxjs/Observable' {
   interface Observable<T> {
-    debug: typeof debug;
+    debug: typeof debug
   }
 }
 

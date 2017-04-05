@@ -52,4 +52,15 @@ describe('Observable.prototype.debug', () => {
     expect(logError).to.be.calledWith('error', 42)
   })
 
+  it('should log next and complete without message', () => {
+    Observable.of(42).debug().subscribe()
+    expect(logNext).to.be.calledWith(42)
+    expect(logComplete).to.be.calledWith('complete')
+  })
+
+  it('should log error without message', () => {
+    Observable.throw(42).debug().subscribe(null, () => {})
+    expect(logError).to.be.calledWith(42)
+  })
+
 })
