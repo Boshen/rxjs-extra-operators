@@ -1,8 +1,33 @@
 {
-  "name": "rxjs-extras",
+  "name": "rxjs-extra-operators",
   "version": "0.0.0",
   "main": "index.js",
-  "repository": "https://github.com/Boshen/rxjs-extras",
+  "repository": "https://github.com/Boshen/rxjs-extras-operators",
   "author": "Boshen <boshenc@gmail.com>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "mocha test/*.ts --require ts-node/register",
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "rxjs": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/es6-promise": "^0.0.32",
+    "@types/mocha": "^2.2.40",
+    "@types/sinon": "^2.1.2",
+    "@types/sinon-chai": "^2.7.27",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "rxjs": "^5.3.0",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.2"
+  },
+  "files": [
+    "index.js",
+    "dist/**"
+  ]
 }
