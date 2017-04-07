@@ -19,15 +19,15 @@ describe('Observable.prototype.debug', () => {
   let logComplete: SinonStub
 
   beforeEach(() => {
-		logNext = sinon.stub(console, 'log')
-		logError = sinon.stub(console, 'error')
-		logComplete = sinon.stub(console, 'info')
+    logNext = sinon.stub(console, 'log')
+    logError = sinon.stub(console, 'error')
+    logComplete = sinon.stub(console, 'info')
   })
 
   afterEach(() => {
-		logNext.restore()
-		logError.restore()
-		logComplete.restore()
+    logNext.restore()
+    logError.restore()
+    logComplete.restore()
   })
 
   it('should log next value', () => {
@@ -37,7 +37,7 @@ describe('Observable.prototype.debug', () => {
   })
 
   it('should log error value', () => {
-    Observable.throw(42).debug('error').subscribe(null, () => {})
+    Observable.throw(42).debug('error').subscribe(null, () => { })
     expect(logError).to.be.calledWithExactly('error', 42)
   })
 
@@ -48,7 +48,7 @@ describe('Observable.prototype.debug', () => {
   })
 
   it('should log error message from the second argument', () => {
-    Observable.throw(42).debug('next', 'error').subscribe(null, () => {})
+    Observable.throw(42).debug('next', 'error').subscribe(null, () => { })
     expect(logError).to.be.calledWithExactly('error', 42)
   })
 
@@ -59,7 +59,7 @@ describe('Observable.prototype.debug', () => {
   })
 
   it('should log error without message', () => {
-    Observable.throw(42).debug().subscribe(null, () => {})
+    Observable.throw(42).debug().subscribe(null, () => { })
     expect(logError).to.be.calledWithExactly(42)
   })
 
