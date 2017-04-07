@@ -6,7 +6,7 @@
   "author": "Boshen <boshenc@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "mocha test/*.ts --require ts-node/register",
+    "test": "mocha test/*.ts --require ts-node/register -R dot",
     "build": "rm -rf dist && tsc",
     "prepare": "npm run build"
   },
